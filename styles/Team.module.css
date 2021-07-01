@@ -1,0 +1,32 @@
+.team {
+  width: 367px;
+  height: 367px;
+  border: 5px solid #fc5c65;
+  color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.team:hover {
+  border: 5px solid #ffaf40;
+  transform: scale(1.1, 1.1);
+}
+.team_badge {
+  width: 30%;
+  margin-bottom: 10px;
+}
+.explore_btn {
+  background-color: #b33939;
+  color: white;
+  width: 120px;
+  padding: 8px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.explore_btn:hover {
+  background-color: #f97f51;
+}
