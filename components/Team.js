@@ -1,5 +1,3 @@
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -27,10 +25,6 @@ const Team = (props) => {
             }}
           >
             Explore
-            <FontAwesomeIcon
-              style={{ marginLeft: "10px" }}
-              icon={faArrowRight}
-            />
           </a>
         </Link>
       </button>

@@ -5,9 +5,8 @@ export const getStaticPaths = async () => {
   const data = await res.json();
 
   const paths = data.teams.map((team) => {
-    console.log(typeof team.idTeam);
     return {
-      params: { id: team.idTeam.toString() },
+      params: { team: team.idTeam },
     };
   });
 
@@ -18,7 +17,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const id = context.params.id;
+  const id = context.params.team;
 
   const res = await fetch(
     `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${id}`
@@ -33,14 +32,14 @@ export const getStaticProps = async (context) => {
 import React from "react";
 
 const teamDetails = ({ team }) => {
-  console.log(team);
+  console.log("team", team);
   return (
-    <div>
-      <h1>{team.strTeam}</h1>
-      <h3>{team.strAlternate}</h3>
-      <h3>{team.strSport}</h3>
-      <h3>{team.strLeague}</h3>
-      <h3>{team.strStadium}</h3>
+    <div style={{ padding: "20px" }}>
+      <h1>{team[0].strTeam}</h1>
+      <h3>{team[0].strAlternate}</h3>
+      <h3>{team[0].strSport}</h3>
+      <h3>{team[0].strLeague}</h3>
+      <h3>{team[0].strStadium}</h3>
     </div>
   );
 };
